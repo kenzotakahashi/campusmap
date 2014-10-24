@@ -1,0 +1,7 @@
+<!-- <a href="#/direction/E"><img ng-src="static/images/ITTC_E.jpg" height="200" width="200"></a>
+<a href="#/direction/N"><img ng-src="static/images/ITTC_N.jpg" height="200" width="200"></a>
+ -->
+
+<div ng-repeat="e in entrance">
+	<a href="#/direction/{{e}}"><img ng-src="static/images/{{building}}_{{e}}.jpg" height="200" width="200"></a>
+</div>

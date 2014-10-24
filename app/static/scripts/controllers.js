@@ -1,51 +1,97 @@
 var mapControllers = angular.module('mapControllers', []);
 
+var START = '';
+var BUILDING = '';
+var ROOM = '';
+
+mapControllers.controller('HomeCtrl', function ($scope, $http) {
+  // Use param to show different lists
+});
+
+mapControllers.controller('DetailCtrl', function ($scope, $http, $routeParams) {
+  $http.get('static/scripts/location.json').success (function(data){
+    $scope.category = data[$routeParams['category']];
+  });
+
+});
+
+mapControllers.controller('EndLocationCtrl', function ($scope, $http, $routeParams) {
+  // Set starting location to global variable.
+  START = $routeParams['start'];
+});
+
+mapControllers.controller('BuildingCtrl', function ($scope, $http, $routeParams) {
+  $http.get('static/scripts/location.json').success (function(data){
+    $scope.buildings = data['destination'];
+  });
+});
+
+mapControllers.controller('RoomCtrl', function ($scope, $http, $location, $routeParams) {
+  BUILDING = $routeParams['building'];
+  $scope.room;
+
+  $http.get('../api/v1/rooms/' + BUILDING).success(function(data) {
+    $scope.rooms = data.rooms;
+
+    // Make sure the use input is a valid room number
+    $scope.valid = function() {
+      if ($scope.rooms.indexOf($scope.room) != -1) {
+        return true;
+      }
+      return false;  
+    };
+  });   
+
+
+  $scope.confirm = function () {
+    var r = confirm(START + " to " + BUILDING + " " + $scope.room)
+    if (r == true) {
+      ROOM = $scope.room;
+      $location.path('/map');
+    } else {
+      console.log("You pressed Cancel!");
+    }
+  };
+
+});
+
+mapControllers.controller('ProfessorCtrl', function ($scope, $http, $location, $routeParams) {
+  $http.get('../api/v1/professor').success(function(data) {
+    $scope.professors = data.professors;
+  });
+
+  $scope.confirm = function(p) {
+    var r = confirm(START + " to " + p[1] + " " + p[2]);
+    if (r == true) {
+      BUILDING = p[1];
+      ROOM = p[2];
+      $location.path('/map');
+    } else {
+      console.log("You pressed Cancel!");
+    }
+  }; 
+});
+
+
+mapControllers.controller('MapCtrl', function ($scope, $http, $routeParams) {
+});
+
+mapControllers.controller('EntranceCtrl', function ($scope, $http, $routeParams) {
+  $scope.building = BUILDING;
+  $http.get('../api/v1/entrance/' + $scope.building).success(function(data) {
+    $scope.entrance = data.entrance;
+  });  
+});
 
 mapControllers.controller('DirectionCtrl', function ($scope, $http, $routeParams) {
-  // $http.get('../api/v1/direction/' + $routeParams.topicId).success(function(data) {
-  //   $scope.result = data;
-  // }); 
-  $scope.room = 305;
-  $scope.entrance = 'N'
-
-  $scope.valid = function() {
-    if ($scope.room == 305) {
-      return true;
-    }
-    return false;
-  }
-
-  $scope.getDirection = function() {
-    // console.log($scope.entrance);
-    // console.log($scope.room);
-    $http.get('../api/v1/direction/' + $scope.room +'/'+ $scope.entrance).success(function(data) {
-      $scope.direction = data.direction;
-      console.log($scope.direction)
-    }); 
-  }
-
+  $http.get('../api/v1/direction/' + BUILDING +'/'+ ROOM +'/'+ $routeParams.entrance).success(function(data) {
+    $scope.direction = data.direction;
+    $scope.building = BUILDING;
+    $scope.room = ROOM;
+  });
 
 });
 
 
 
-// utteranceControllers.controller('EditCtrl', function ($scope, $http, $routeParams, $location) {
-// 	$scope.utterance;
-// 	$scope.nodeSelected = false;
-// 	$scope.selectedNode;	
 
-// 	$scope.editUtterance;
-// 	$scope.editNodeSelected = false;
-// 	$scope.editSelectedNode;
-
-// 	$scope.tooltipCreate = {"title": "Create"};
-// 	$scope.tooltipEdit = {"title": "Edit"};
-// 	$scope.tooltipDelete = {"title": "Delete"};
-
-// 	$http.get('../api/v1.0/topics/' + $routeParams.topicId).success(function(data) {
-// 		checkTree(data.tree);
-// 		$scope.user = data.user;
-// 	});
-
-
-// });

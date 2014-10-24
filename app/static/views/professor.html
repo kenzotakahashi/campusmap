@@ -1,0 +1,16 @@
+<form name="myForm">
+  Professor<br>
+  <input type="text" ng-model="name" autofocus/><br />
+<!--   <p ng-hide="valid()">Room number does not exist</p>
+  <button ng-click="confirm()" ng-show="valid()">Get Direction</button> -->
+</form>
+
+<br>
+
+<ul class="list-group">
+	<div ng-repeat="p in professors | filter:name">
+		<li class="list-group-item" style="cursor:pointer" ng-click="confirm(p)">{{p[0]}}</li>
+	</div>
+</ul>
+
+

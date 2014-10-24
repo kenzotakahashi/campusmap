@@ -1,44 +1,8 @@
-<form name="myForm">
-	Entrance<br>
-	<label class="checkbox-inline">
-		<input type="radio" ng-model="entrance" value="N"> N <br/>
-	</label>
-	<label class="checkbox-inline">
-		<input type="radio" ng-model="entrance" value="S"> S <br/>
-	</label>
-	<label class="checkbox-inline">
-	  <input type="radio" ng-model="entrance" value="E"> E <br/>
-	</label>
-	<br>
-  
-  Room Number<br>
-  <input type="text" ng-model="room" /><br />
-  <p ng-hide="valid()">Room number does not exist</p>
-  <button ng-click="getDirection()" ng-show="valid()">Get Direction</button>
-  <!-- <button ng-click="update(user)">SAVE</button> -->
-</form>
+<h1>Starting Location</h1>
 
-
-<!-- <table class="table">
-	<tr ng-repeat="d in direction">
-		<td>{{d.index()}}
-		<td>{{d}}</td>
-	</tr>
-</table> -->
-
-<ul ng-repeat="d in direction">
-{{$index + 1}} {{d}}
-</ul>
-
-<!-- <div class="container">
-	<table class="table">
-		<tr ng-repeat="t in topics">
-			<td><img ng-src="static/images/flag-{{t.language}}.ico" alt={{t.language}} height="35" width="35"></td>
-			<td ng-show="webSpeech && {{t.count > 1}}">
-			<a ng-href="#/chat/{{t._id}}"><h4>{{t.name}}</h4></a></td>
-			<td ng-show="webSpeech === false || {{t.count < 2}}"><h4>{{t.name}}</h4></td>
-			<td>{{t.count}}</td>
-			<td><a ng-href="#/topics/{{t._id}}">edit</a></td>
-		</tr>
-	</table>
-</div> -->
+<div class="list-group">
+  <a href="#/detail/parking" class="list-group-item">Parking Lot</a>
+  <a href="#/detail/busstop" class="list-group-item">Bus Stop</a>
+  <a href="#/detail/building" class="list-group-item">Academic Building</a>
+  <a href="#/detail/residence" class="list-group-item">Residence Hall</a>
+</div>

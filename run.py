@@ -1,4 +1,8 @@
 #!flask/bin/python
 from app import app
-# app.run(debug = True)
-app.run(host='0.0.0.0')
+from sys import argv
+
+if len(argv) > 1:
+	app.run(host='0.0.0.0')	
+else:
+	app.run(debug = True)

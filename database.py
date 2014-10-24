@@ -2,10 +2,28 @@
 
 
 building = {
-	'_id': Object_Id('541d7ae6705bd619ddbe9b54')
-	'name': 'ITTC',
+	'_id': Object_Id('541d7ae6705bd619ddbe9b54'),
+	'name': 'Innovative Teaching and Technology Center',
 	'entrance': ['N', 'E', 'S']
 }
+
+# entrance = {
+# 	'building' = Object_Id('541d7ae6705bd619ddbe9b54'),
+# 	'name' = 'N',
+# 	'floor' = 0
+# }
+
+# entrance = {
+# 	'building' = Object_Id('541d7ae6705bd619ddbe9b54'),
+# 	'name' = 'S',
+# 	'floor' = 0
+# }
+
+# entrance = {
+# 	'building' = Object_Id('541d7ae6705bd619ddbe9b54'),
+# 	'name' = 'E',
+# 	'floor' = 0
+# }
 
 room = {
 	'_id': ObjectId('541d8bfd705bd619ddbe9b5b'),
@@ -20,10 +38,7 @@ room = {
 				'reference': ObjectId('541d7da9705bd619ddbe9b59'),
 				'direction': [
 					ObjectId('541d7bce705bd619ddbe9b55')
-					ObjectId('541d7bce705bd619ddbe9b55')
-				  ObjectId('541d7bce705bd619ddbe9b55')
-				]
-				
+				]		
 			},
 			'stair': {
 				'reference': None,
@@ -72,36 +87,66 @@ elevator = {
 	]
 }	
 
-
+# This is a direction from the elevator to ITTC 305.
 direction = {
 	'_id': ObjectId('541d7bce705bd619ddbe9b55'),
 	'list': [
-		'This is a direction from the elevator to ITTC 305.',
-		'This is another direction from the elevator to ITTC 305.'
+	  ObjectId('543f10fc705bd61bbc2223a4'),
+		ObjectId('543f0faa705bd61bbc2223a3'),
+		ObjectId('543f10fc705bd61bbc2223a4'),
+		ObjectId('543f1142705bd61bbc2223a6'),
+		ObjectId('543f1157705bd61bbc2223a7')
 	]
 }
 
+# north
 direction = {
 	'_id': ObjectId('541d7c3f705bd619ddbe9b56'),
 	'list': [
-		'This is a direction from the north entrance to the elevator.',
-		'This is another direction from the north entrance to the elevator.'
+		ObjectId('543f0faa705bd61bbc2223a3'),
+		ObjectId('543f1103705bd61bbc2223a5'),
+		ObjectId('5447ea4e705bd601899bbf18')
 	]
 }
 
+# south
 direction = {
 	'_id': ObjectId('541d7c59705bd619ddbe9b57'),
 	'list': [
-		'This is a direction from the south entrance to the elevator.',
-		'This is another direction from the south entrance to the elevator.'
+		ObjectId('543f0faa705bd61bbc2223a3'),
+		ObjectId('543f10fc705bd61bbc2223a4'),
+		ObjectId('5447ea4e705bd601899bbf18')
 	]
 }
 
+# East
 direction = {
 	'_id': ObjectId('541d7c6d705bd619ddbe9b58'),
 	'list': [
-		'This is a direction from the east entrance to the elevator.',
-		'This is another direction from the east entrance to the elevator.'
+		ObjectId('543f0faa705bd61bbc2223a3'),
+		ObjectId('5447ea6e705bd601899bbf19')
 	]
 }
+
+phrase = {
+	'phrase': 'Walk straight'
+}
+
+
+'Walk straight'
+ObjectId('543f0faa705bd61bbc2223a3')
+'Turn right'
+ObjectId('543f10fc705bd61bbc2223a4')
+'Turn left'
+ObjectId('543f1103705bd61bbc2223a5')
+'Go down the hall'
+ObjectId('543f1142705bd61bbc2223a6')
+"It's on the right"
+ObjectId('543f1157705bd61bbc2223a7')
+"It's on the left"
+ObjectId('543f115d705bd61bbc2223a8')
+"Take the elevator on right"
+ObjectId('5447ea4e705bd601899bbf18')
+"Take the elevator on left"
+ObjectId('5447ea6e705bd601899bbf19')
 

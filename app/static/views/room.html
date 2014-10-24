@@ -1,0 +1,7 @@
+<form name="myForm">
+  Room Number<br>
+  <input type="number" ng-model="room" autofocus/><br />
+  <p ng-hide="valid()">Room number does not exist</p>
+  <button ng-click="confirm()" ng-show="valid()">Get Direction</button>
+  <!-- <button ng-click="update(user)">SAVE</button> -->
+</form>
