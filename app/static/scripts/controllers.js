@@ -40,16 +40,13 @@ mapControllers.controller('RoomCtrl', function ($scope, $http, $location, $route
       }
       return false;  
     };
-  });   
-
+  });
 
   $scope.confirm = function () {
     var r = confirm(START + " to " + BUILDING + " " + $scope.room)
     if (r == true) {
       ROOM = $scope.room;
       $location.path('/map');
-    } else {
-      console.log("You pressed Cancel!");
     }
   };
 
@@ -66,14 +63,14 @@ mapControllers.controller('ProfessorCtrl', function ($scope, $http, $location, $
       BUILDING = p[1];
       ROOM = p[2];
       $location.path('/map');
-    } else {
-      console.log("You pressed Cancel!");
     }
   }; 
 });
 
 
 mapControllers.controller('MapCtrl', function ($scope, $http, $routeParams) {
+  $scope.origin = "Lawther%20Hall%2C%20West%2023rd%20Street%2C%20Cedar%20Falls%2C%20IA";
+  $scope.destination = "Innovative%20Teaching%20and%20Technical%20Center%2C%20Campus%20St%2C%20Cedar%20Falls%2C%20IA";
 });
 
 mapControllers.controller('EntranceCtrl', function ($scope, $http, $routeParams) {
