@@ -1,7 +1,6 @@
-<a href="#/entrance">At building</a>
+<!-- <button><a href="#/entrance" ng-show="hasRoom()">At building</a></button> -->
+<a href="#/entrance" class="btn btn-default" role="button" ng-show="hasRoom()">At building</a>
+<!-- <button type="button" href="#/entrance" class="btn btn-primary btn-lg btn-block" ng-show="hasRoom()">Block level button</button> -->
 <br>
 
-<iframe height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin={{origin}}&destination={{destination}}&mode=walking&key=AIzaSyBYo_55KJMWURTNCZ9JkhT2zp-dj1ucOC8"></iframe>
-
-
-
+<iframe height="450" frameborder="0" style="border:0" ng-src="{{trustSrc(map)}}"></iframe>

@@ -2,6 +2,7 @@ var app = angular.module('campusmap', [
     'ngRoute',
     'ngResource',
     'mapControllers',
+    'ngSanitize',
     // "mobile-angular-ui",
 ]);
 
@@ -31,6 +32,10 @@ app.config(function ($routeProvider, $httpProvider) {
         templateUrl: 'static/views/professor.html',
         controller: 'ProfessorCtrl'
       })
+      .when('/otherend/:category', {
+        templateUrl: 'static/views/otherend.html',
+        controller: 'OtherendCtrl'
+      })
       .when('/map', {
         templateUrl: 'static/views/map.html',
         controller: 'MapCtrl'
@@ -42,6 +47,14 @@ app.config(function ($routeProvider, $httpProvider) {
       .when('/direction/:entrance', {
         templateUrl: 'static/views/direction.html',
         controller: 'DirectionCtrl'
+      })
+      .when('/settings', {
+        templateUrl: 'static/views/settings.html',
+        controller: 'SettingsCtrl'
+      })
+      .when('/settings/:category', {
+        templateUrl: 'static/views/settings_detail.html',
+        controller: 'SettingsDetailCtrl'
       })
       .otherwise({
         redirectTo: '/'

@@ -6,14 +6,16 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/styles/map.css">
 
     <!-- <link rel="stylesheet" href="static/styles/mobile-angular-ui-hover.min.css" /> -->
     <!-- <link rel="stylesheet" href="static/styles/mobile-angular-ui-base.min.css" /> -->
     <!-- <link rel="stylesheet" href="static/styles/mobile-angular-ui-desktop.min.css" /> -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-resource.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-resource.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.min.js"></script>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -29,12 +31,22 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">New Search</a>
+          <a class="navbar-brand" href="#/settings" style="float: right!important; margin-right: 25px;"><span class="glyphicon glyphicon-cog"></span></a>
+        </div>
+      </div>
+    </nav>
+
+
     <div class="container">
-      <a href="#">New Search</a>
-      <a href="">Setting</a>
+<!--       <a href="#">New Search</a>
+      <a href="#">Setting</a>
+      <a href="#"><span class="glyphicon glyphicon-star"></span></a> -->
       <div ng-view=""></div>
 
-      <div class="footer"></div>
     </div>
 
   </body>

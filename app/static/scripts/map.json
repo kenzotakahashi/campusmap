@@ -8,89 +8,77 @@
     "GBPAC Visitor Lot": "GBPAC%20cedar%20falls",
     "Gilchrist Lot": "Gilchrist%20Hall%20University%20of%20Northern%20Iowa%20Dakota%20St%20Cedar%20Falls",
     "Hagemann Lot": "Hagemann%20Hall%2C%202800%20Hudson%20Rd%20Cedar%20Falls",
-    "ITC Lot": ""
-    "ITC South A Lot":
-    "ITC South Lot":
-    "ITC West Lot":
-    "Jennings Drive Lots":
-    "Latham Field":
-    "Multimodal Transportation Center":
-    "Noehren Lot":
-    "North Dome Lot":
-    "Panther Village Lot":
-    "Physical Plant North Lot":
-    "Physical Plant South Lot":
-    "Power Plant Lot":
-    "Price Lab Lot":
-    "Price Lab South Lot":
-    "Redeker Lot":
-    "Rider Lot":
-    "ROTH Lot":
-    "Shull Lot":
-    "South Art Lot":
-    "South Dome Lot":
-    "Towers Drive":
-    "Wellness/ Recreation Center Lot":
-    "West Dome Lot":
-    "West Gym Lot" 
+    "ITC Lot": "2900%20Campus%20St%20University%20of%20Northern%20Iowa%20Cedar%20Falls",
+    "Jennings Drive Lots": "Jennings%20Dr%2C%20Cedar%20Falls%2C%20IA",
+    "Multimodal Transportation Center": "1203%20W%2023rd%20St%20University%20of%20Northern%20Iowa%20Cedar%20Falls",
+    "Noehren Lot": "Noehren%20Hall%202900%20Hudson%20Rd%20Cedar%20Falls",
+    "North Dome Lot": "UNI-Dome%2C%20Hudson%20Road%2C%20Cedar%20Falls",
+    "Panther Village Lot": "Panther%20Village%20University%20of%20Northern%20Iowa%20Ohio%20St%20Cedar%20Falls",
+    "Price Lab Lot": "Price%20Laboratory%20School%2C%20Cedar%20Falls",
+    "Redeker Lot": "Redeker%20Center%201501%20Redeker%20Dr%20Cedar%20Falls",
+    "Rider Lot": "Rider%20Hall%202801%20Ohio%20St%20Cedar%20Falls",
+    "ROTH Lot": "3900%20Jennings%20Dr%20Cedar%20Falls",
+    "Shull Lot": "Shull%20Hall%2C%20Ohio%20St%2C%20Cedar%20Falls",
+    "South Art Lot": "1809%20W%2027th%20St%2C%20Cedar%20Falls",
+    "South Dome Lot": "UNI-Dome%2C%20Hudson%20Road%2C%20Cedar%20Falls",
+    "Towers Drive": "Towers%20Center%20University%20of%20Northern%20Iowa%20Cedar%20Falls",
+    "Wellness/ Recreation Center Lot": "Wellness%2FRecreation%20Center%202250%20Hudson%20Rd%20Cedar%20Falls",
+    "West Dome Lot": "UNI-Dome%2C%20Hudson%20Road%2C%20Cedar%20Falls",
+    "West Gym Lot": "West%20Gymnasium%20Cedar%20Falls",
 
-	"1: Roth":
-	"2: Redeker Center":
-	"3: Univ Mills Apartements":
-	"4: Hillcrest Apartements":
-	"5: Hudson Road":
-	"6: MMTC":
-	"7: College Street"
+	"1: Roth": "3900%20Jennings%20Dr%20Cedar%20Falls",
+	"2: Redeker Center": "Redeker%20Center%201501%20Redeker%20Dr%20Cedar%20Falls",
+	"3: Univ Mills Apartements": "2124%20W%2027th%20St%20Cedar%20Falls",
+	"4: Hillcrest Apartements": "9614%20University%20Ave%20%23303%20Cedar%20Falls",
+	"5: Hudson Road": "%202700%20Hudson%20Rd%20University%20of%20Northern%20Iowa%20Cedar%20Falls",
+	"6: Multimodal Transportation Center": "1203%20W%2023rd%20St%20University%20of%20Northern%20Iowa%20Cedar%20Falls",
+	"7: College Street": "College%20St%20Cedar%20Falls",
 
-	"Bartlett Hall":
-	"Begeman Hall":
-	"Biology Research Complex":
-	"Business and Community Services":
-	"Center for Energy and Environmental Education":
-	"Center for Social and Behavioral Research":
-	"Child Development Center":
-	"Communication Arts Center":
-	"Continuing Education":
-	"Curris Business Building":
-	"East Bartlett":
-	"Gilchrist Hall":
-	"Honors Cottage":
-	"Industrial Technology Center":
-	"Innovative Teaching and Technology Center": "Innovative%20Teaching%20and%20Technical%20Center%2C%20Campus%20St%2C%20Cedar%20Falls%2C%20IA%2050614",
-	"Kamerick Art Building":
-	"Lang Hall":
-	"Latham Hall":
-	"Marshall Center School":
-	"McCollum Science Hall":
-	"Redeker Center":
-	"Richard O. Jacobson Human Performance Center":
-	"Rod Library":
-	"Russell Hall":
-	"Sabin Hall":
-	"Schindler Education Center":
-	"Seerley Hall":
-	"Towers Center":
-	"Wright Hall"
+	"Bartlett Hall": "Bartlett%20Hall%20W%2023rd%20St%20Cedar%20Falls",
+	"Begeman Hall": "Begeman%20Hall%20University%20of%20Northern%20Iowa%20W%2023rd%20St%20Cedar%20Falls",
+	"Biology Research Complex": "B%20Parking%20College%20St%20Cedar%20Falls", 
+	"Business and Community Services": "8120%20Jennings%20Dr%20University%20of%20Northern%20Iowa%20Cedar%20Falls",
+	"Center for Energy and Environmental Education": "University%20of%20Northern%20Iowa%2C%20West%2027th%20Street%2C%20Cedar%20Falls",
+	"Communication Arts Center": "Communication%20Arts%20Center%20University%20of%20Northern%20Iowa%20Cedar%20Falls",
+	"Continuing Education": "University%20of%20Northern%20Iowa%2C%20West%2027th%20Street%2C%20Cedar%20Falls",
+	"Curris Business Building": "Curris%20Business%20Bldg%2C%20Minnesota%20St%20Cedar%20Falls",
+	"East Bartlett": "Bartlett%20Hall%20W%2023rd%20St%20Cedar%20Falls",
+	"Gilchrist Hall": "Gilchrist%20Hall%2C%20Dakota%20St%2C%20Cedar%20Falls",
+	"Industrial Technology Center": "Industrial%20Technology%20Center%2C%20Campus%20Street%2C%20Cedar%20Falls",
+	"Innovative Teaching and Technology Center": "Innovative%20Teaching%20and%20Technical%20Center%2C%20Campus%20St%2C%20Cedar%20Falls",
+	"Kamerick Art Building": "Kamerick%20Art%20Building%2C%20Hudson%20Road%2C%20Cedar%20Falls",
+	"Lang Hall": "Lang%20Hall%20Wisconsin%20St%20Cedar%20Falls",
+	"Latham Hall": "Latham%20Hall%20University%20of%20Northern%20Iowa%20University%20Av%20Frontage%20Rd%20Ave%20Cedar%20Falls",
+	"Marshall Center School": "Marshall%20Center%20School%2C%20West%2023rd%20Street%2C%20Cedar%20Falls",
+	"McCollum Science Hall": "McCollum%20Science%20Hall%2C%20University%20Av%20Frontage%20Rd%20Ave%20Cedar%20Falls",
+	"Redeker Center": "Redeker%20Center%201501%20Redeker%20Dr%20Cedar%20Falls",
+	"Richard O. Jacobson Human Performance Center": "National%20Program%20for%20Playground%20Safety%20Human%20Performance%20Center%20103%20Uni%20Dome%20Cedar%20Falls",
+	"Rod Library": "Rod%20Library%201227%20W%2027th%20St%20Cedar%20Falls",
+	"Russell Hall": "Russell%20Hall%20Minnesota%20St%20Cedar%20Falls",
+	"Sabin Hall": "Sabin%20Hall%20University%20of%20Northern%20Iowa%20Cedar%20Falls",
+	"Schindler Education Center": "Schindler%20Education%20Center%20University%20of%20Northern%20Iowa%20Cedar%20Falls",
+	"Seerley Hall": "Seerley%20Hall%2C%20Wisconsin%20St%20Cedar%20Falls",
+	"Towers Center": "Towers%20Center%20University%20of%20Northern%20Iowa%20Cedar%20Falls",
+	"Wright Hall": "Wright%20Hall%20University%20of%20Northern%20Iowa%20Campus%20St%20Cedar%20Falls",
 
-	"Bender Hall":
+	"Bender Hall": "Bender%20Hall%20Cedar%20Falls",
 	"Campbell Hall": "Campbell%20Hall%2C%201301%20W%2023rd%20St%20Cedar%20Falls%2C%20IA",
-	"Dancer Hall":
+	"Dancer Hall": "Dancer%20Hall%20Cedar%20Falls",
 	"Hagemann Hall": "Hagemann%20Hall%2C%202800%20Hudson%20Rd%20Cedar%20Falls",
-	"Hillside Courts":
-	"Jennings Courts":
+	"Hillside Courts": "Jennings%20Dr%2C%20Cedar%20Falls%2C%20IA",
+	"Jennings Courts": "Jennings%20Dr%2C%20Cedar%20Falls%2C%20IA",
 	"Lawther Hall": "Lawther%20Hall%2C%20West%2023rd%20Street%2C%20Cedar%20Falls%2C%20IA%2C%20United%20States",
-	"Noehren Hall":
-	"Panther Village":
-	"Rider Hall":
-	"ROTH Complex":
-	"Shull Hall"
+	"Noehren Hall": "Noehren%20Hall%202900%20Hudson%20Rd%20Cedar%20Falls",
+	"Panther Village": "Panther%20Village%20University%20of%20Northern%20Iowa%20Ohio%20St%20Cedar%20Falls",
+	"Rider Hall": "Rider%20Hall%202801%20Ohio%20St%20Cedar%20Falls",
+	"ROTH Complex": "3900%20Jennings%20Dr%20Cedar%20Falls",
+	"Shull Hall": "Shull%20Hall%2C%20Ohio%20St%2C%20Cedar%20Falls",
 
-	"23rd Street Market":
-	"Campanile":
-	"Commons":
-	"Mauker Union":
-	"Piazza":
-	"Rialto":
-	"Student Health Center":
-	"Wellness & Recreation Center"
+	"23rd Street Market": "23rd%20Street%20Market%201224%20W%2023rd%20St%20Cedar%20Falls",
+	"Campanile": "Campanile%2C%20Campus%20St%20Cedar%20Falls",
+	"Commons": "Commons%20Campus%20St%20Cedar%20Falls",
+	"Mauker Union": "Maucker%20Union%20063%20Maucker%20Union%20Cedar%20Falls",
+	"Piazza": "Piazza%20Residential%20Restaurants%201501%20Redeker%20Dr%20Cedar%20Falls",
+	"Rialto": "Rialto%20Dining%20Center%202003%20Campus%20St%20Cedar%20Falls",
+	"Wellness & Recreation Center": "Wellness%2FRecreation%20Center%202250%20Hudson%20Rd%20Cedar%20Falls"
 }

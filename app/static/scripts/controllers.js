@@ -3,14 +3,18 @@ var mapControllers = angular.module('mapControllers', []);
 var START = '';
 var BUILDING = '';
 var ROOM = '';
+var CATEGORY = {'parking': 'Parking Lot', 'busstop': 'Bus Stop', 'residence': 'Residence Hall',
+                'building': 'Academic Building', 'venue': 'Venue'}
 
 mapControllers.controller('HomeCtrl', function ($scope, $http) {
-  // Use param to show different lists
+  ROOM = '';
+  $scope.home = localStorage.getItem("home");
 });
 
 mapControllers.controller('DetailCtrl', function ($scope, $http, $routeParams) {
   $http.get('static/scripts/location.json').success (function(data){
     $scope.category = data[$routeParams['category']];
+    $scope.name = CATEGORY[$routeParams['category']];
   });
 
 });
@@ -20,7 +24,7 @@ mapControllers.controller('EndLocationCtrl', function ($scope, $http, $routePara
   START = $routeParams['start'];
 });
 
-mapControllers.controller('BuildingCtrl', function ($scope, $http, $routeParams) {
+mapControllers.controller('BuildingCtrl', function ($scope, $http) {
   $http.get('static/scripts/location.json').success (function(data){
     $scope.buildings = data['destination'];
   });
@@ -40,6 +44,13 @@ mapControllers.controller('RoomCtrl', function ($scope, $http, $location, $route
       }
       return false;  
     };
+
+    $scope.valid2 = function() {
+      if ($scope.rooms.indexOf($scope.room) != -1 || !$scope.room) {
+        return true;
+      }
+      return false;  
+    };
   });
 
   $scope.confirm = function () {
@@ -52,7 +63,7 @@ mapControllers.controller('RoomCtrl', function ($scope, $http, $location, $route
 
 });
 
-mapControllers.controller('ProfessorCtrl', function ($scope, $http, $location, $routeParams) {
+mapControllers.controller('ProfessorCtrl', function ($scope, $http, $location) {
   $http.get('../api/v1/professor').success(function(data) {
     $scope.professors = data.professors;
   });
@@ -67,10 +78,34 @@ mapControllers.controller('ProfessorCtrl', function ($scope, $http, $location, $
   }; 
 });
 
+mapControllers.controller('OtherendCtrl', function ($scope, $http, $location, $routeParams) {
+  $http.get('static/scripts/location.json').success (function(data){
+    $scope.locations = data[$routeParams.category];
+    $scope.name = CATEGORY[$routeParams['category']];
+  });
 
-mapControllers.controller('MapCtrl', function ($scope, $http, $routeParams) {
-  $scope.origin = "Lawther%20Hall%2C%20West%2023rd%20Street%2C%20Cedar%20Falls%2C%20IA";
-  $scope.destination = "Innovative%20Teaching%20and%20Technical%20Center%2C%20Campus%20St%2C%20Cedar%20Falls%2C%20IA";
+  $scope.confirm = function(p) {
+    var r = confirm(START + " to " + p);
+    if (r == true) {
+      BUILDING = p;
+      $location.path('/map');
+    }
+  };
+});
+
+mapControllers.controller('MapCtrl', function ($scope, $http, $sce) {
+  $http.get('static/scripts/map.json').success (function(data){
+    $scope.map = "https://www.google.com/maps/embed/v1/directions?origin=" + data[START] + "&destination=" + 
+                data[BUILDING] + "&mode=walking&key=AIzaSyBYo_55KJMWURTNCZ9JkhT2zp-dj1ucOC8";
+  });
+  
+  $scope.trustSrc = function(src) {
+    return $sce.trustAsResourceUrl(src);
+  };
+
+  $scope.hasRoom = function() {
+    return (ROOM != "");
+  };
 });
 
 mapControllers.controller('EntranceCtrl', function ($scope, $http, $routeParams) {
@@ -86,9 +121,22 @@ mapControllers.controller('DirectionCtrl', function ($scope, $http, $routeParams
     $scope.building = BUILDING;
     $scope.room = ROOM;
   });
+});
+
+mapControllers.controller('SettingsCtrl', function ($scope, $http, $location) {
 
 });
 
+mapControllers.controller('SettingsDetailCtrl', function ($scope, $http, $location, $routeParams) {
+  $http.get('static/scripts/location.json').success (function(data){
+    $scope.category = data[$routeParams['category']];
+    $scope.name = CATEGORY[$routeParams['category']];
+  });
 
+  $scope.sethome = function(location) {
+    localStorage.setItem("home", location);
+    $location.path('/');
+  };
+});
 
-
+// localstrage.getItem()

@@ -59,9 +59,6 @@ def professor():
 
 
 
-
-
-
 # def findByEntrance(lyst, entrance):
 # 	return next(x for x in lyst if x['entrance'] == entrance)
 
