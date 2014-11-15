@@ -55,8 +55,8 @@ mapControllers.controller('RoomCtrl', function ($scope, $http, $location, $route
       return (($scope.rooms.indexOf($scope.room) != -1) ? true : false);
     };
 
-    $scope.valid2 = function() {
-      return (($scope.rooms.indexOf($scope.room) != -1 || !$scope.room) ? true : false);
+    $scope.invalid = function() {
+      return (($scope.rooms.indexOf($scope.room) == -1 && $scope.room) ? true : false);
     };
   });
 
