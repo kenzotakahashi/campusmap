@@ -9,7 +9,7 @@
 	    "GBPAC Visitor Lot",
 	    "Gilchrist Lot",
 	    "Hagemann Lot",
-	    "ITC Lot",
+	    "Industrial Technology Center Lot",
 	    "Jennings Drive Lots",
 	    "Multimodal Transportation Center",
 	    "Noehren Lot",
@@ -93,6 +93,8 @@
 	],
 
 	"destination": [
-		"Innovative Teaching and Technology Center"
+		"Innovative Teaching and Technology Center",
+		"Wright Hall",
+		"Russell Hall"
 	]
 }

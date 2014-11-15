@@ -1,5 +1,8 @@
 <h3>Direction to {{building}} {{room}}</h3>
 
-<ul ng-repeat="d in direction track by $index">
-{{$index + 1}} {{d}}
-</ul>
+<div class="radio" ng-repeat="d in direction track by $index">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+    {{$index + 1}} {{d}}
+  </label>
+</div>

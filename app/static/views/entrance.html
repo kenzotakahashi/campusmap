@@ -1,7 +1,13 @@
-<!-- <a href="#/direction/E"><img ng-src="static/images/ITTC_E.jpg" height="200" width="200"></a>
-<a href="#/direction/N"><img ng-src="static/images/ITTC_N.jpg" height="200" width="200"></a>
- -->
+<!-- <div ng-repeat="e in entrance">
+	<h4>{{getEntrance(e)}} entrance</h4>
+	<a href="#/direction/{{e}}"><img ng-src="static/images/{{building}}_{{e}}.jpg" height="290" width="290"></a>
+</div> -->
 
-<div ng-repeat="e in entrance">
-	<a href="#/direction/{{e}}"><img ng-src="static/images/{{building}}_{{e}}.jpg" height="230" width="230"></a>
+<div ng-repeat="d in direction">
+	<h4>{{getEntrance(d)}} entrance</h4>
+	<a href="#/direction/{{d['entrance']}}">
+		<img ng-src="static/images/{{building}}_{{d['entrance']}}.jpg" height="290" width="290">
+	</a>
 </div>
+
+<br>

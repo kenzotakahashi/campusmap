@@ -9,30 +9,6 @@ def index():
 	# Initial Load
     return send_file("templates/index.html")
 
-@app.route('/api/v1/direction/<building>/<int:roomNumber>/<entrance>', methods=['GET'])
-def direction(building, roomNumber, entrance):
-	# find a room by room number
-	building = db.building.find_one({'name': building})
-	r = db.room.find_one({'building': building['_id'], 'number': roomNumber})
-	# get the entrance and direction
-	e = next(x for x in r['direction'] if x['entrance'] == entrance)
-	roomDirection = db.direction.find_one({'_id': e['elevator']['direction']})['list']
-	roomDirection = [db.phrase.find_one({'_id': id})['phrase'] for id in roomDirection]
-
-	# get the elevator
-	elevator = db.elevator.find_one({'_id': e['elevator']['reference']})
-
-	# The room is located in the same floor as the entrance.
-	if elevator['floor'] == r['floor']:
-		return jsonify({'direction': roomDirection})
-
-	# get the entrance and direction
-	e2 = next(x for x in elevator['direction'] if x['entrance'] == entrance)
-	elevatorDirection = db.direction.find_one({'_id': e2['direction']})['list']
-	elevatorDirection = [db.phrase.find_one({'_id': id})['phrase'] for id in elevatorDirection]
-
-	return jsonify({'direction': elevatorDirection + getFloor(r['floor']) + roomDirection})
-
 
 def getFloor(floor):
 	return ['Go to the ' + ['ground','1st','2nd','3rd','4th'][floor] + ' floor']
@@ -53,12 +29,57 @@ def rooms(building):
 @app.route('/api/v1/professor', methods=['GET'])
 def professor():
 	# list of professors along with the building and the room number
-	professors = [[r['professor'], db.building.find_one({'_id': r['building']})['name'], r['number']] \
-					for r in db.room.find() if r['professor'] != '']
-	return jsonify({'professors': professors})
+	professors = []
+	for r in db.room.find():
+		if r['professor'] != '':
+			if type(r['professor']) == unicode:
+				professors.append([r['professor'], db.building.find_one({'_id': r['building']})['name'], r['number']])
+			else:
+				for p in r['professor']:
+					professors.append([p, db.building.find_one({'_id': r['building']})['name'], r['number']])
+
+	# professors = [[r['professor'], db.building.find_one({'_id': r['building']})['name'], r['number']] \
+	# 				for r in db.room.find() if r['professor'] != '']
+	return jsonify({'professors': sorted(professors, key=lambda x: x[0])})
+
+def breakDown(r):
+	"""Break down professors who belong to the same room"""
+	return []
 
 
+@app.route('/api/v1/direction/<building>/<int:roomNumber>', methods=['GET'])
+def direction(building, roomNumber):
+	# find a room by room number
+	building = db.building.find_one({'name': building})
+	r = db.room.find_one({'building': building['_id'], 'number': roomNumber})
+	# get the entrance and direction
+	return jsonify({'direction': [directionByEntrance(r,e) for e in r['direction']]})
 
-# def findByEntrance(lyst, entrance):
-# 	return next(x for x in lyst if x['entrance'] == entrance)
+def directionByEntrance(r, e):
+
+	print r['direction'][0]['elevator']['reference']
+
+	# elevator
+	if r['direction'][0]['elevator']['reference']:
+		roomDirection = db.direction.find_one({'_id': e['elevator']['direction']})['list']
+		roomDirection = [db.phrase.find_one({'_id': id})['phrase'] for id in roomDirection]
+		# get the elevator
+		stair_elevator = db.elevator.find_one({'_id': e['elevator']['reference']})
+	# stair
+	else:
+		roomDirection = db.direction.find_one({'_id': e['stair']['direction']})['list']
+		roomDirection = [db.phrase.find_one({'_id': id})['phrase'] for id in roomDirection]
+		# get the stair
+		stair_elevator = db.stair.find_one({'_id': e['stair']['reference']})
+
+	# The room is located in the same floor as the entrance.
+	if stair_elevator['floor'] == r['floor']:
+		return {'entrance': e['entrance'], 'direction': roomDirection}
+
+	# get the entrance and direction
+	e2 = next(x for x in stair_elevator['direction'] if x['entrance'] == e['entrance'])
+	elevatorDirection = db.direction.find_one({'_id': e2['direction']})['list']
+	elevatorDirection = [db.phrase.find_one({'_id': id})['phrase'] for id in elevatorDirection]
+
+	return {'entrance': e['entrance'], 'direction': elevatorDirection + getFloor(r['floor']) + roomDirection}
 

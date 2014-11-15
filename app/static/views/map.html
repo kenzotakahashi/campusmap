@@ -1,6 +1,10 @@
-<!-- <button><a href="#/entrance" ng-show="hasRoom()">At building</a></button> -->
+<p>Click "More options" to go to native google maps app.</p>
+
+<div>
 <a href="#/entrance" class="btn btn-default" role="button" ng-show="hasRoom()">At building</a>
-<!-- <button type="button" href="#/entrance" class="btn btn-primary btn-lg btn-block" ng-show="hasRoom()">Block level button</button> -->
+</div>
 <br>
 
-<iframe height="450" frameborder="0" style="border:0" ng-src="{{trustSrc(map)}}"></iframe>
+<div>
+	<iframe height="400" frameborder="0" style="border:0" ng-src="{{trustSrc(map)}}"></iframe>
+</div>

@@ -1,10 +1,18 @@
+<!-- <div class="alert alert-success alert-dismissible" role="alert" ng-show="hasAlert()">
+  <button type="button" class="close" data-dismiss="alert">
+  	<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+  </button>
+  <strong>{{home}}</strong> has been set to home.
+</div> -->
+
 <h3>Starting Location</h3>
 
 <div class="list-group">
-  <a ng-href="#/end/{{home}}" class="list-group-item">{{home}} (home)</a>  
+  <a ng-href="#/end/{{home}}" class="list-group-item" ng-show="hasHome()">{{home}} (home)</a>  
   <br>
   <a href="#/detail/parking" class="list-group-item">Parking Lot</a>
   <a href="#/detail/busstop" class="list-group-item">Bus Stop</a>
   <a href="#/detail/building" class="list-group-item">Academic Building</a>
   <a href="#/detail/residence" class="list-group-item">Residence Hall</a>
+  <a href="#/detail/venue" class="list-group-item">Venue</a>
 </div>
