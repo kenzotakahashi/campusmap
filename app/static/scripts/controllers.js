@@ -73,7 +73,7 @@ mapControllers.controller('ProfessorCtrl', function ($scope, $http, $location) {
   });
 
   $scope.confirm = function(p) {
-    var r = confirm(START + " to " + p[1] + " " + p[2]);
+    var r = confirm(START + " to " + p[0] + "'s office " + p[1] + " " + p[2]);
     if (r == true) {
       BUILDING = p[1];
       ROOM = p[2];
