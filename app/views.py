@@ -57,7 +57,7 @@ def direction(building, roomNumber):
 
 def directionByEntrance(r, e):
 
-	print r['direction'][0]['elevator']['reference']
+	# print r['direction'][0]['elevator']['reference']
 
 	# elevator
 	if r['direction'][0]['elevator']['reference']:
