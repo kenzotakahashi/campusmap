@@ -15,10 +15,6 @@ mapControllers.controller('HomeCtrl', function ($scope, $http, $routeParams) {
   $scope.hasHome = function() {
     return ($scope.home ? true : false);
   };
-
-  // $scope.hasAlert = function() {
-  //   return ALERT;
-  // };
 });
 
 mapControllers.controller('DetailCtrl', function ($scope, $http, $routeParams) {

@@ -1,12 +1,20 @@
-<!-- <div ng-repeat="e in entrance">
-	<h4>{{getEntrance(e)}} entrance</h4>
-	<a href="#/direction/{{e}}"><img ng-src="static/images/{{building}}_{{e}}.jpg" height="290" width="290"></a>
-</div> -->
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+	<div class="btn-group" role="group" ng-repeat="d in direction">
+  	<!-- <button type="button" class="btn btn-default" >{{getEntrance(d)}}</button> -->
+  	<a href="#/direction/{{d['entrance']}}" class="btn btn-default" role="button">{{d['entrance']}}</a>
+	</div>
+</div>
+
+<br>
+
+<div>
+	<img ng-src="static/images/{{building}}.jpg" height="387" width="290">
+</div>
 
 <div ng-repeat="d in direction">
 	<h4>{{getEntrance(d)}} entrance</h4>
 	<a href="#/direction/{{d['entrance']}}">
-		<img ng-src="static/images/{{building}}_{{d['entrance']}}.jpg" height="290" width="290">
+		<img ng-src="static/images/{{building}}_{{d['entrance']}}.jpg" height="387" width="290">
 	</a>
 </div>
 
